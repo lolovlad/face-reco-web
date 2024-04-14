@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+      <div class="nav-wrapper red darken-4">
+        <div class="container">
+          <a href="#" class="brand-logo">Поликлиника</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a @click="$router.push(`/`)">Зарегистрировать</a></li>
+            <li><a @click="$router.push(`/recognize`)">Разпознать</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  <div class="app">
+    <router-view>
+
+    </router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import M from "materialize-css/dist/js/materialize"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  mounted() {
+    M.AutoInit();
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style>
